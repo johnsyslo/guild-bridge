@@ -1,0 +1,19 @@
+{
+  "name": "bridge",
+  "version": "1.0.0",
+  "description": "A bridge between Discord and Hypixel.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node src/index.js"
+  },
+  "author": "dwsysfx",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.8.0",
+    "dotenv": "^16.0.3",
+    "nodemon": "^2.0.21"
+  },
+  "devDependencies": {
+    "eslint": "^8.36.0"
+  }
+}
