@@ -1,5 +1,5 @@
 const { EmbedBuilder } = require('discord.js')
-const { client } = require('../index')
+const { client } = require('../handler/bot')
 
 module.exports = {
 	name: 'ping',
@@ -11,7 +11,7 @@ module.exports = {
 			.setDescription('The ping of both the bot and discord api.')
 			.setThumbnail('https://media.giphy.com/media/fvA1ieS8rEV8Y/giphy.gif')
 			.addFields(
-				{ name: 'Uptime', value: `${Math.round(client.uptime / 60000)}`, inline: true },
+				{ name: 'Uptime', value: `${Math.round(client.uptime / 60000)} mins`, inline: true },
 				{ name: 'Bot Ping', value: `${Date.now() - message.createdTimestamp}ms`, inline: true },
 				{ name: 'API Ping', value: `${client.ws.ping}ms`, inline: true },
 			)

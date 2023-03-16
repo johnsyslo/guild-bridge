@@ -1,6 +1,6 @@
 const { Events } = require('discord.js');
 const Discord = require('discord.js');
-const { client } = require('../../index');
+const { client } = require('../../handler/bot');
 require('dotenv').config();
 const fs = require('fs');
 
