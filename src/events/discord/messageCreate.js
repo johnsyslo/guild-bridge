@@ -4,7 +4,6 @@ const { client } = require('../../handler/bot');
 require('dotenv').config();
 const fs = require('fs');
 
-// Read and setup commands.
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./src/commands/').filter(file => file.endsWith('.js'));
                 
@@ -18,7 +17,6 @@ module.exports = {
 	execute(message) {
                 if (!message.content.startsWith(process.env.PREFIX) || message.author.bot) return;
 
-                // Execute commands.
 	        const args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/);
 	        const command = args.shift().toLowerCase();
 

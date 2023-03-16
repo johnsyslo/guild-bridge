@@ -1,6 +1,6 @@
 {
   "name": "bridge",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A bridge between Discord and Hypixel.",
   "main": "src/handler/bot.js",
   "scripts": {
