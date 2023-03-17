@@ -1,8 +1,10 @@
 const { Client, GatewayIntentBits } = require("discord.js");
 require('dotenv').config();
+const mineflayer = require('mineflayer')
 const fs = require('node:fs');
 const path = require('node:path');
 
+// Create the Discord Client
 const client = new Client({
     intents: [
         GatewayIntentBits.Guilds,
@@ -12,7 +14,18 @@ const client = new Client({
 		GatewayIntentBits.GuildMembers,
     ],
 });
-module.exports = { client }
+
+const mbot = mineflayer.createBot({
+	username: process.env.MINECRAFT_EMAIL,
+	password: process.env.MINECRAFT_PASSWORD,
+	host: "mc.hypixel.net",
+	version: "1.16.4",
+	logErrors: true,
+	hideErrors: true,
+	auth: 'microsoft',
+	checkTimeoutInterval: 30000,
+});
+module.exports = { client, mbot }
 
 // Event Handler
 const discordEventFiles = fs.readdirSync('./src/events/discord').filter(file => file.endsWith('.js'));

@@ -15,7 +15,7 @@ for (const file of commandFiles) {
 module.exports = {
 	name: Events.MessageCreate,
 	execute(message) {
-                if (!message.content.startsWith(process.env.PREFIX) || message.author.bot) return;
+            if (!message.content.startsWith(process.env.PREFIX) || message.author.bot) return;
 
 	        const args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/);
 	        const command = args.shift().toLowerCase();
@@ -26,7 +26,7 @@ module.exports = {
 		        client.commands.get(command).execute(message, args);
 	        } catch (error) {
 		        console.error(error);
-		        message.reply('there was an error trying to execute that command!');
+				message.reply({ embeds: [util.Error('There was an error running this command!', message.author)] })
 	        }
 	},
 };
