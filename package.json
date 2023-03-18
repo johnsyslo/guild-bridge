@@ -1,6 +1,6 @@
 {
   "name": "bridge",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A bridge between Discord and Hypixel.",
   "main": "src/handler/bot.js",
   "scripts": {
@@ -13,12 +13,5 @@
     "dotenv": "^16.0.3",
     "mineflayer": "^4.8.1",
     "nodemon": "^2.0.21"
-  },
-  "devDependencies": {
-    "eslint": "^8.36.0",
-    "eslint-config-standard": "^17.0.0",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-n": "^15.6.1",
-    "eslint-plugin-promise": "^6.1.1"
   }
 }

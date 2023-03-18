@@ -4,6 +4,6 @@ const { bot } = require('../../../handler/bot')
 module.exports = {
     name: 'chat:joinLimbo',
 	async execute() {
-        (`Bot joined limbo.`)
+        console.log(`Bot joined limbo.`)
 	},
 };
