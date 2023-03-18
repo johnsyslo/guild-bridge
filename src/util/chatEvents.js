@@ -4,17 +4,17 @@
  */
 
 module.exports = {
-	/**
+	/** --------------- NOT CURRENT USED ---------------
 	 * When a message is blocked for containing suspicious content
 	 *
 	 * Returns:
 	 *  - Comment blocked
 	 *  - Reason
+	 *
+	 * "chat:commentBlocked": /^We blocked your comment "(.+)" as it is breaking our rules because (.+). https:\/\/www.hypixel.net\/rules\/$/,
 	 */
-	"chat:commentBlocked":
-		/^We blocked your comment "(.+)" as it is breaking our rules because (.+). https:\/\/www.hypixel.net\/rules\/$/,
 
-	/**
+	/** --------------- NOT CURRENT USED ---------------
 	 * When a message is sent in the guild chat
 	 *
 	 * Returns:
@@ -23,18 +23,20 @@ module.exports = {
 	 *  - Player Name
 	 *  - Guild Rank
 	 *  - Message
+	 *
+	 * "chat:guildChat": /^(Guild|Officer) > (\[.*])?\s*(\w{2,17}).*?(\[.{1,15}])?: (.*)$/,
 	 */
-	"chat:guildChat": /^(Guild|Officer) > (\[.*])?\s*(\w{2,17}).*?(\[.{1,15}])?: (.*)$/,
 
-	/**
+	/** --------------- NOT CURRENT USED ---------------
 	 * When the guild levels up
 	 *
 	 * Returns:
 	 *  - New Guild Level
-	 */
-	"chat:guildLevelUp": /^\s{19}The Guild has reached Level (\d*)!$/,
+	 *
+     * "chat:guildLevelUp": /^\s{19}The Guild has reached Level (\d*)!$/,
+     */
 
-	/**
+	/** --------------- NOT CURRENT USED ---------------
 	 * When a member is muted/unmuted
 	 *
 	 * Returns:
@@ -45,8 +47,9 @@ module.exports = {
 	 *  - Muter Player Name
 	 *  - Muter Player Name
 	 *  - Duration
-	 */
-	"chat:guildMuteUnmute": /^(\[.*])?\s*(\w{2,17}) has (muted|unmuted) (\[.*])?\s*(\w{2,17})(?: for (\d*[a-z]))?$/,
+	 *
+     * "chat:guildMuteUnmute": /^(\[.*])?\s*(\w{2,17}) has (muted|unmuted) (\[.*])?\s*(\w{2,17})(?: for (\d*[a-z]))?$/,
+     */
 
 	/**
 	 * When a member connects to or disconnects from Hypixel
@@ -57,44 +60,50 @@ module.exports = {
 	 */
 	"chat:joinLeave": /^Guild > (\w{2,17}).*? (joined|left)\.$/,
 
-	/**
+	/** --------------- NOT CURRENT USED ---------------
 	 * When the bot detects it is in Limbo
+	 *
+	 * "chat:joinLimbo": /^You were spawned in Limbo.$/,
 	 */
-	"chat:joinLimbo": /^You were spawned in Limbo.$/,
 
 	/**
 	 * When the bot detects its not in Limbo
+	 *
+	 * "chat:lobbyJoin": /^(?:\s>>>\s)?\[.*]\s[\w]{2,17} (?:joined|spooked into|slid into) the lobby!(?:\s<<<)?$/,
 	 */
-	"chat:lobbyJoin": /^(?:\s>>>\s)?\[.*]\s[\w]{2,17} (?:joined|spooked into|slid into) the lobby!(?:\s<<<)?$/,
 
-	/**
+	/** --------------- NOT CURRENT USED ---------------
 	 * When a player requests to join the guild
 	 *
 	 * Returns:
 	 *  - Player Name
-	 */
-	"chat:joinRequest": /^(?:\[.*])?\s*(\w{2,17}) has requested to join the Guild!$/,
+	 *
+	 * "chat:joinRequest": /^(?:\[.*])?\s*(\w{2,17}) has requested to join the Guild!$/,
+     */
 
-	/**
+	/** --------------- NOT CURRENT USED ---------------
 	 * When "/g online" is typed, and the online and total member count is shown
 	 *
 	 * Returns:
 	 *  - Online / Total
 	 *  - Member Count
-	 */
-	"chat:memberCount": /^(Online|Total) Members: (\d+)$/,
+	 *
+     *
+	 * "chat:memberCount": /^(Online|Total) Members: (\d+)$/,
+     */
 
-	/**
+	/** --------------- NOT CURRENT USED ---------------
 	 * When a player joins or leaves the guild
 	 *
 	 * Returns:
 	 *  - Hypixel Rank
 	 *  - Player Name
 	 *  - joined / left
-	 */
-	"chat:memberJoinLeave": /^(\[.*])?\s*(\w{2,17}).*? (joined|left) the guild!$/,
+	 *
+     * "chat:memberJoinLeave": /^(\[.*])?\s*(\w{2,17}).*? (joined|left) the guild!$/,
+     */
 
-	/**
+	/** --------------- NOT CURRENT USED ---------------
 	 * When a player is kicked from the guild
 	 *
 	 * Returns:
@@ -102,10 +111,11 @@ module.exports = {
 	 *  - Player Name
 	 *  - Kicker Hypixel Rank
 	 *  - Kicker Player Name
-	 */
-	"chat:memberKick": /^(\[.*])?\s*(\w{2,17}).*? was kicked from the guild by (\[.*])?\s*(\w{2,17}).*?!$/,
+	 *
+     * "chat:memberKick": /^(\[.*])?\s*(\w{2,17}).*? was kicked from the guild by (\[.*])?\s*(\w{2,17}).*?!$/,
+     */
 
-	/**
+	/** --------------- NOT CURRENT USED ---------------
 	 * When a member is promoted or demoted
 	 *
 	 * Returns:
@@ -114,34 +124,38 @@ module.exports = {
 	 *  - promoted / demoted
 	 *  - From Rank
 	 *  - To Rank
-	 */
-	"chat:promoteDemote": /^(\[.*])?\s*(\w{2,17}).*? was (promoted|demoted) from (.*) to (.*)$/,
+	 *
+     * "chat:promoteDemote": /^(\[.*])?\s*(\w{2,17}).*? was (promoted|demoted) from (.*) to (.*)$/,
+     */
 
-	/**
+	/** --------------- NOT CURRENT USED ---------------
 	 * When all guild quest tiers are complete
-	 */
-	"chat:questComplete": /^\s{17}GUILD QUEST COMPLETED!$/,
+	 *
+     * "chat:questComplete": /^\s{17}GUILD QUEST COMPLETED!$/,
+     */
 
-	/**
+	/** --------------- NOT CURRENT USED ---------------
 	 * When a guild quest tier is complete
 	 *
 	 * Returns:
 	 *  - Tier Completed
-	 */
-	"chat:questTierComplete": /^\s{17}GUILD QUEST TIER (\d*) COMPLETED!$/,
+	 *
+     * "chat:questTierComplete": /^\s{17}GUILD QUEST TIER (\d*) COMPLETED!$/,
+     */
 
 	/**
 	 * When a message is sent repeatedly
 	 */
-	"chat:sameMessageTwice": /^You cannot say the same message twice!$/,
+	"chat:stopSpam": /^You cannot say the same message twice!$/,
 
-	/**
+	/** --------------- NOT CURRENT USED ---------------
 	 * When a player whispers to the bot with "/msg"
 	 *
 	 * Returns:
 	 *  - Hypixel Rank
 	 *  - Player Name
 	 *  - Message
+	 *
+	 * "chat:whisper": /^From (?:\[.*])?\s*(\w{2,17}).*?: (.+)$/,
 	 */
-	"chat:whisper": /^From (?:\[.*])?\s*(\w{2,17}).*?: (.+)$/,
 }

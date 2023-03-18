@@ -17,14 +17,17 @@ for (const file of discordEventFiles) {
 }
 
 // Mineflayer Event Handler
-const mineflayerEventFiles = fs.readdirSync('./src/events/mineflayer').filter(file => file.endsWith('.js'));
+const mineflayerEventFolder = fs.readdirSync('./src/events/mineflayer');
 
-for (const file of mineflayerEventFiles) {
-    const filePath = path.join('../events/mineflayer', file);
-    const mineflayerEvent = require(filePath)
-    if (mineflayerEvent.once == true) {
-        bot.once(mineflayerEvent.name, (...args) => mineflayerEvent.execute(...args));
-    } else {
-        bot.on(mineflayerEvent.name, (...args) => mineflayerEvent.execute(...args));
-    }
+for (const folder of mineflayerEventFolder) {
+	const mineflayerEventFiles = fs.readdirSync(`./src/events/mineflayer/${folder}`).filter((file) => file.endsWith('.js'));
+	for (const file of mineflayerEventFiles) {
+    	const filePath = path.join('../events/mineflayer', folder, file)
+		const mineflayerEvent = require(filePath)
+		if (mineflayerEvent.once == true) {
+			bot.once(mineflayerEvent.name, (...args) => mineflayerEvent.execute(...args));
+		} else {
+			bot.on(mineflayerEvent.name, (...args) => mineflayerEvent.execute(...args));
+		}
+  	}
 }

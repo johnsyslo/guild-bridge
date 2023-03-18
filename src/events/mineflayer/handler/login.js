@@ -1,5 +1,5 @@
 const mineflayer = require('mineflayer')
-const { bot } = require('../../handler/bot')
+const { bot } = require('../../../handler/bot')
 
 module.exports = {
     name: 'login',
