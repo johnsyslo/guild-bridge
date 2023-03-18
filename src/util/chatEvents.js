@@ -14,7 +14,7 @@ module.exports = {
 	 * "chat:commentBlocked": /^We blocked your comment "(.+)" as it is breaking our rules because (.+). https:\/\/www.hypixel.net\/rules\/$/,
 	 */
 
-	/** --------------- NOT CURRENT USED ---------------
+	/**
 	 * When a message is sent in the guild chat
 	 *
 	 * Returns:
@@ -23,9 +23,8 @@ module.exports = {
 	 *  - Player Name
 	 *  - Guild Rank
 	 *  - Message
-	 *
-	 * "chat:guildChat": /^(Guild|Officer) > (\[.*])?\s*(\w{2,17}).*?(\[.{1,15}])?: (.*)$/,
 	 */
+	"chat:guildChat": /^(Guild|Officer) > (\[.*])?\s*(\w{2,17}).*?(\[.{1,15}])?: (.*)$/,
 
 	/** --------------- NOT CURRENT USED ---------------
 	 * When the guild levels up
@@ -60,17 +59,15 @@ module.exports = {
 	 */
 	"chat:joinLeave": /^Guild > (\w{2,17}).*? (joined|left)\.$/,
 
-	/** --------------- NOT CURRENT USED ---------------
+	/**
 	 * When the bot detects it is in Limbo
-	 *
-	 * "chat:joinLimbo": /^You were spawned in Limbo.$/,
 	 */
+	 "chat:joinLimbo": /^You were spawned in Limbo.$/,
 
 	/**
 	 * When the bot detects its not in Limbo
-	 *
-	 * "chat:lobbyJoin": /^(?:\s>>>\s)?\[.*]\s[\w]{2,17} (?:joined|spooked into|slid into) the lobby!(?:\s<<<)?$/,
 	 */
+	"chat:lobbyJoin": /^(?:\s>>>\s)?\[.*]\s[\w]{2,17} (?:joined|spooked into|slid into) the lobby!(?:\s<<<)?$/,
 
 	/** --------------- NOT CURRENT USED ---------------
 	 * When a player requests to join the guild

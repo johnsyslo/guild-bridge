@@ -19,7 +19,7 @@ const client = new Client({
 const bot = mineflayer.createBot({
 	username: process.env.MINECRAFT_EMAIL,
 	password: process.env.MINECRAFT_PASSWORD,
-	host: "greev.eu",
+	host: "mc.hypixel.net",
 	version: "1.16.4",
 	logErrors: true,
 	hideErrors: true,
@@ -28,6 +28,12 @@ const bot = mineflayer.createBot({
 });
 
 const chatEvents = require('../util/chatEvents');
+for (var key in chatEvents) {
+	bot.chatAddPattern(
+		chatEvents[key],
+		key,
+	)
+}
 
 module.exports = { client, bot }
 const eventHandler = require('../handler/eventHandler');
