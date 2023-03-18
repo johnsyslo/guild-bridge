@@ -1,9 +1,9 @@
 const Discord = require("discord.js");
-const { client } = require('../handler/bot');
+const { client, bot } = require('../handler/bot');
 const fs = require('fs');
 const path = require('path');
 
-// Event Handler
+// Discord Event Handler
 const discordEventFiles = fs.readdirSync('./src/events/discord').filter(file => file.endsWith('.js'));
 
 for (const file of discordEventFiles) {
@@ -14,4 +14,17 @@ for (const file of discordEventFiles) {
 	} else {
 		client.on(discordEvent.name, (...args) => discordEvent.execute(...args));
 	}
+}
+
+// Mineflayer Event Handler
+const mineflayerEventFiles = fs.readdirSync('./src/events/mineflayer').filter(file => file.endsWith('.js'));
+
+for (const file of mineflayerEventFiles) {
+    const filePath = path.join('../events/mineflayer', file);
+    const mineflayerEvent = require(filePath)
+    if (mineflayerEvent.once == true) {
+        bot.once(mineflayerEvent.name, (...args) => mineflayerEvent.execute(...args));
+    } else {
+        bot.on(mineflayerEvent.name, (...args) => mineflayerEvent.execute(...args));
+    }
 }
