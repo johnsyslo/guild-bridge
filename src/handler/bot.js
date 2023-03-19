@@ -1,7 +1,6 @@
 const { Client, GatewayIntentBits } = require("discord.js");
 require('dotenv').config();
 const mineflayer = require('mineflayer')
-
 const fs = require('fs');
 
 // Create the Discord Client
@@ -27,6 +26,7 @@ const bot = mineflayer.createBot({
 	checkTimeoutInterval: 30000,
 });
 
+// Add the Chat Pattern Events
 const chatEvents = require('../util/chatEvents');
 for (var key in chatEvents) {
 	bot.chatAddPattern(
