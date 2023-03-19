@@ -1,6 +1,7 @@
-const { EmbedBuilder } = require('discord.js')
-const util = require('../util/message')
-const fs = require('fs')
+const { EmbedBuilder } = require('discord.js');
+const util = require('../util/message');
+const fs = require('fs');
+require('dotenv').config();
 
 module.exports = {
 	name: 'help',

@@ -1,4 +1,3 @@
-const mineflayer = require('mineflayer')
 const { bot } = require('../../../handler/bot')
 
 module.exports = {
