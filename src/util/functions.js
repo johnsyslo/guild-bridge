@@ -1,4 +1,5 @@
-const { client } = require('../handler/bot');
+const { bold } = require('discord.js');
+const { client, bot } = require('../handler/bot');
 require('dotenv').config();
 
 module.exports = {
@@ -26,6 +27,14 @@ module.exports = {
             client.channels.cache.get(process.env.GUILDCHAT).send({ embeds: [content] });
         } else {
             client.channels.cache.get(process.env.OFFICERCHAT).send({ embeds: [content] });
+        }
+    },
+
+    sendToGuild: (channel, content) => {
+        if (channel === 'Guild') {
+            bot.chat(`/gc ${content}`)
+        } else {
+            bot.chat(`/oc ${content}`)
         }
     }
 }
