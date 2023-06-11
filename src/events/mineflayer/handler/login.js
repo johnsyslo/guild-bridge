@@ -1,4 +1,4 @@
-const { bot } = require('../../../handler/bot')
+const { bot }  = require("../../../main")
 
 module.exports = {
     name: 'login',

@@ -1,5 +1,5 @@
 const { EmbedBuilder } = require('discord.js');
-const util = require('../util/message');
+const util = require('../util/function');
 const fs = require('fs');
 require('dotenv').config();
 

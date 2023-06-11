@@ -1,17 +1,18 @@
 {
   "name": "bridge",
-  "version": "1.0.6",
+  "version": "1.0.0",
   "description": "A bridge between Discord and Hypixel.",
-  "main": "src/handler/bot.js",
+  "main": "src/main.js",
   "scripts": {
-    "test": "node src/handler/bot.js"
+    "test": "node src/main.js"
   },
-  "author": "dwsysfx",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^14.8.0",
-    "dotenv": "^16.0.3",
+    "discord.js": "^14.11.0",
+    "dotenv": "^16.1.4",
     "mineflayer": "^4.8.1",
-    "nodemon": "^2.0.21"
+    "nodemon": "^2.0.22"
   }
 }

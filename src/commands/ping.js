@@ -1,5 +1,5 @@
 const { EmbedBuilder } = require('discord.js')
-const { client } = require('../handler/bot')
+const { client } = require('../main')
 
 module.exports = {
 	name: 'ping',

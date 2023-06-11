@@ -1,6 +1,5 @@
-const badWords = [
+module.exports = [
     "anal",
-	"#ajs",
 	"suicide",
 	"kys",
 	"send yourself",
@@ -27,5 +26,7 @@ const badWords = [
 	"whore",
     "braindead",
     "dick",
+	"retard",
+	"fag",
+	"faggot"
 ]
-module.exports = { badWords }

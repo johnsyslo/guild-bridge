@@ -1,5 +1,5 @@
 const { EmbedBuilder } = require('discord.js')
-const func = require('../../../util/functions')
+const func = require('../../../util/function')
 
 module.exports = {
     name: 'chat:joinLeave',
@@ -9,6 +9,6 @@ module.exports = {
         const embed = new EmbedBuilder()
             .setDescription( `${emoji} ${player} has ${status}!`)
 
-        func.sendToDiscord('Guild', embed);
+        func.sendToDiscord(process.env.GUILD, embed);
 	},
 };
