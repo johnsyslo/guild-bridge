@@ -1,7 +1,8 @@
 const { Events, Collection } = require('discord.js');
 const  { client } = require("../../main");
+const badWords = require("../../util/badWords")
 
-const util = require("../../util/function")
+const em = require("../../util/embed")
 const fs = require('fs');
 require('dotenv').config();
 
@@ -16,18 +17,28 @@ for (const file of commandFiles) {
 module.exports = {
     name: Events.MessageCreate,
     execute(message) {
-        if (!message.content.startsWith(process.env.PREFIX) || message.author.bot) return;
+        // Discord Command Handler
+        if (message.content.startsWith(process.env.PREFIX) || !message.author.bot){
+            const args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/);
+            const command = args.shift().toLowerCase();
+            
+            if (!client.commands.has(command)) return;
+            try {
+                client.commands.get(command).execute(message, args);
+            } catch (error) {
+                console.error(error);
+                message.reply({ embeds: [em.Error('There was an error running this command!', message.author)] })
+            }
+        }
         
-        const args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/);
-        const command = args.shift().toLowerCase();
 
-        if (!client.commands.has(command)) return;
-
-        try {
-            client.commands.get(command).execute(message, args);
-        } catch (error) {
-            console.error(error);
-            message.reply({ embeds: [util.Error('There was an error running this command!', message.author)] })
+        // Discord -> Guild Message Handler
+        if (message.channel == process.env.GUILD_CHANNEL || message.channel == process.env.OFFICER_CHANNEL){
+            if (message.author.bot || message.attachments.size > 0 || message.member === null) return;
+            if (badWords.some((word) => message.content.includes(word))){
+				message.channel.send({ embeds: [em.Stop('Naughty words!', message.author)] })
+				message.delete();
+			}
         }
     }
 }

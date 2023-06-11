@@ -1,5 +1,5 @@
 const { EmbedBuilder } = require('discord.js');
-const util = require('../util/function');
+const em = require('../util/embed');
 const fs = require('fs');
 require('dotenv').config();
 
@@ -21,7 +21,7 @@ module.exports = {
             } 
             message.reply({ embeds: [embed] })
         } else {
-            message.reply({ embeds: [util.Error('Not finished!', message.author)] })
+            message.reply({ embeds: [em.Error('Not finished!', message.author)] })
         }
 	},
 };

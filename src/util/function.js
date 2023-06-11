@@ -1,4 +1,3 @@
-const { Collection } = require('discord.js');
 const { client, bot } = require('../main');
 
 module.exports  = {
@@ -17,14 +16,5 @@ module.exports  = {
         } else {
             bot.chat(`/oc ${content}`)
         }
-    },
-
-    Error: (content, user) => {
-        return new EmbedBuilder()
-            .setColor(0xFF0000)
-            .setTitle('Error!')
-            .setDescription(content)
-            .setFooter({ text: `${user.username}`, iconURL: `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}` })
-            .setTimestamp()
     },
 }
