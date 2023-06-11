@@ -1,6 +1,6 @@
 const { Events, Collection } = require('discord.js');
 const  { client } = require("../../main");
-const badWords = require("../../util/badWords");
+
 const util = require("../../util/function")
 const fs = require('fs');
 require('dotenv').config();
