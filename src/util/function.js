@@ -1,11 +1,6 @@
 const { client, bot } = require('../main');
 
 module.exports  = {
-    setUp: () => {
-        require('../handler/discord')
-        require('../handler/mineflayer')
-    },
-
     sendToDiscord: (channel, content) =>  {
         client.channels.cache.get(channel).send({ embeds: [content] })
     },

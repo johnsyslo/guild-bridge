@@ -1,7 +1,7 @@
 const { Client, GatewayIntentBits } = require("discord.js")
 require("dotenv").config();
 const mineflayer = require('mineflayer')
-const func = require("../src/util/function")
+const quakfix = require('./util/quakfix');
 
 // Create the Discord client or connection to the server.
 const client = new Client({
@@ -26,4 +26,4 @@ const bot = mineflayer.createBot({
 
 module.exports = { client, bot };
 client.login(process.env.TOKEN);
-func.setUp();
+quakfix.setUp();

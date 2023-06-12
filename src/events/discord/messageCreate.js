@@ -33,7 +33,7 @@ module.exports = {
         
 
         // Discord -> Guild Message Handler
-        if (message.channel == process.env.GUILD_CHANNEL || message.channel == process.env.OFFICER_CHANNEL){
+        if (message.channel === process.env.GUILD_CHANNEL || message.channel === process.env.OFFICER_CHANNEL){
             if (message.author.bot || message.attachments.size > 0 || message.member === null) return;
             if (badWords.some((word) => message.content.includes(word))){
 				message.channel.send({ embeds: [em.Stop('Naughty words!', message.author)] })
