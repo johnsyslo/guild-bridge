@@ -9,6 +9,6 @@ module.exports = {
         const embed = new EmbedBuilder()
             .setDescription( `${emoji} ${player} has ${status}!`)
 
-        func.sendToDiscord(process.env.GUILD, embed);
+        func.sendToDiscord(process.env.GUILD_CHANNEL, embed);
 	},
 };

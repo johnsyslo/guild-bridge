@@ -13,9 +13,7 @@ module.exports = {
     Stop: (content, user) => {
         return new EmbedBuilder()
             .setColor(0xFF0000)
-            .setTitle('Hey, you can\'t do that!')
-            .setDescription(content)
-            .setFooter({ text: `${user.username}`, iconURL: `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}` })
+            .setTitle(content)
             .setTimestamp()
     }
 }
