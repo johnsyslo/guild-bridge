@@ -20,7 +20,6 @@ module.exports = {
     execute(message) {
         // Discord Command Handler
         if (message.content.startsWith(process.env.PREFIX)){
-            console.log('WHY??')
             if (message.author.bot) return;
             const args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/);
             const command = args.shift().toLowerCase();
@@ -40,7 +39,7 @@ module.exports = {
                     message.delete();
 				    message.channel.send({ embeds: [em.Stop('No naughty words!', message.author)] })
 			    } else {
-                    func.sendToGuild(message.channel == process.env.GUILD_CHANNEL ? 'Guild' : 'Officer', message.content)
+                    func.sendToGuild(message.channel == process.env.GUILD_CHANNEL ? 'Guild' : 'Officer', message.member.nickname + ': ' + message.content)
                 }
             }
         }
