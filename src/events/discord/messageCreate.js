@@ -39,21 +39,20 @@ module.exports = {
 				.setTitle("Error")
 				.setDescription("> You don't have permission to run this command!");
 
-			if (command.staffOnly && !message.member.roles.cache.has(process.env.STAFF_ROLE_ID)) {
+			if (command.recOnly && !message.member.roles.cache.has(process.env.RECRUITER_ROLE_ID)) {
 				message.reply({ embeds: [permsError] }).then((msg) => {
 					setTimeout(() => msg.delete(), 5000);
 				});
 				return;
-			} else if (command.recOnly && !message.member.roles.cache.has(process.env.RECRUITER_ROLE_ID)) {
+			} else if (command.staffOnly && !message.member.roles.cache.has(process.env.RECRUITER_ROLE_ID)) {
 				message.reply({ embeds: [permsError] }).then((msg) => {
 					setTimeout(() => msg.delete(), 5000);
 				});
-				return;
 			}
 
 			if (!client.commands.has(command.name)) return;
 			try {
-				command.execute(message, args);
+				command.execute(message, args.join(" "));
 			} catch (error) {
 				console.error(error);
 				embed

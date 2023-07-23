@@ -16,6 +16,17 @@ module.exports = {
 		if (args[0]) {
 			const commandName = args[0];
 			const command = client.commands.get(commandName) || client.aliases.get(commandName);
+			if (!client.commands.has(command.name)) {
+				embed.setTitle("Error").setColor(0xff0000).setDescription(`> \`${args[0]}\` is not a command.`);
+
+				message
+					.replay({
+						embeds: [embed],
+					})
+					.then((msg) => {
+						setTimeout(() => msg.delete(), 5000);
+					});
+			}
 			message.reply({
 				embeds: [
 					embed
