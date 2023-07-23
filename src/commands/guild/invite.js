@@ -7,6 +7,7 @@ module.exports = {
 	aliases: ["i", "inv"],
 	type: "guild",
 	staffOnly: true,
+	recOnly: true,
 	async execute(message, user) {
 		const embed = new EmbedBuilder();
 		if (user.length <= 0) {

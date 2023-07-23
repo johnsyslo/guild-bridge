@@ -16,6 +16,7 @@
 	"plugins": ["sonarjs", "unicorn"],
 	"rules": {
 		"sonarjs/cognitive-complexity": 0,
+		"sonarjs/no-duplicated-branches": 0,
 		"unicorn/prefer-module": 0,
 		"unicorn/prevent-abbreviations": 0,
 		"unicorn/number-literal-case": 0,

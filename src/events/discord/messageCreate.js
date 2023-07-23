@@ -34,17 +34,18 @@ module.exports = {
 			const commandName = args.shift().toLowerCase();
 			const command = client.commands.get(commandName) || client.aliases.get(commandName);
 
-			if (
-				command.staffOnly &&
-				!message.member.roles.cache.has(process.env.STAFF_ROLE_ID) &&
-				!message.member.roles.cache.has(process.env.RECRUITER_ROLE_ID)
-			) {
-				embed
-					.setColor("Red")
-					.setTitle("Error")
-					.setDescription("> You don't have permission to run this command!");
+			const permsError = embed
+				.setColor("Red")
+				.setTitle("Error")
+				.setDescription("> You don't have permission to run this command!");
 
-				message.reply({ embeds: [embed] }).then((msg) => {
+			if (command.staffOnly && !message.member.roles.cache.has(process.env.STAFF_ROLE_ID)) {
+				message.reply({ embeds: [permsError] }).then((msg) => {
+					setTimeout(() => msg.delete(), 5000);
+				});
+				return;
+			} else if (command.recOnly && !message.member.roles.cache.has(process.env.RECRUITER_ROLE_ID)) {
+				message.reply({ embeds: [permsError] }).then((msg) => {
 					setTimeout(() => msg.delete(), 5000);
 				});
 				return;
