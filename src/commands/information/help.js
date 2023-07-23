@@ -10,17 +10,22 @@ module.exports = {
 	async execute(message, args) {
 		const embed = new EmbedBuilder()
 			.setTitle("Commands")
-			.setDescription("Use `,help <command>` to learn more about that command.")
+			.setDescription("Use `,help <command>` to learn more about a command.")
 			.setColor(0x6f47cc)
 			.setTimestamp();
 		if (args[0]) {
+			const commandName = args[0];
+			const command = client.commands.get(commandName) || client.aliases.get(commandName);
 			message.reply({
 				embeds: [
 					embed
 						// prettier ignore
-						.setColor(0xff0000)
-						.setTitle("Error")
-						.setDescription("Not finished!")
+						.setTitle(`${command.name}`)
+						.setDescription(`${command.description}`)
+						.addFields(
+							{ name: "Aliases", value: command.aliases.sort().join(", ") },
+							{ name: "Staff?", value: command.staffOnly ? command.staffOnly.toString() : "false" },
+						)
 						.setTimestamp(),
 				],
 			});
