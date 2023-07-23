@@ -1,28 +1,27 @@
-const { bot } = require('../main');
-const fs = require('fs');
-const path = require('path');
+const { bot } = require("../main");
+const fs = require("node:fs");
+const path = require("node:path");
 
 // Mineflayer Event Handler
-const mineflayerEventFolder = fs.readdirSync('./src/events/mineflayer');
+const mineflayerEventFolder = fs.readdirSync("./src/events/mineflayer");
 
 for (const folder of mineflayerEventFolder) {
-	const mineflayerEventFiles = fs.readdirSync(`./src/events/mineflayer/${folder}`).filter((file) => file.endsWith('.js'));
+	const mineflayerEventFiles = fs
+		.readdirSync(`./src/events/mineflayer/${folder}`)
+		.filter((file) => file.endsWith(".js"));
 	for (const file of mineflayerEventFiles) {
-    	const filePath = path.join('../events/mineflayer', folder, file)
-		const mineflayerEvent = require(filePath)
-		if (mineflayerEvent.once == true) {
+		const filePath = path.join("../events/mineflayer", folder, file);
+		const mineflayerEvent = require(filePath);
+		if (mineflayerEvent.once) {
 			bot.once(mineflayerEvent.name, (...args) => mineflayerEvent.execute(...args));
 		} else {
 			bot.on(mineflayerEvent.name, (...args) => mineflayerEvent.execute(...args));
 		}
-  	}
+	}
 }
 
 // Mineflayer Chat Patterns
-const chatEvents = require('../util/chatEvents');
+const chatEvents = require("../util/chatEvents");
 for (var key in chatEvents) {
-	bot.chatAddPattern(
-		chatEvents[key],
-		key,
-	)
+	bot.chatAddPattern(chatEvents[key], key);
 }

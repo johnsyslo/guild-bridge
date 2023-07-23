@@ -1,9 +1,9 @@
-const { bot }  = require("../../../main")
+const { bot } = require("../../../main");
 
 module.exports = {
-    name: 'login',
+	name: "login",
 	once: true,
 	async execute() {
-        console.log(`Logged in as ${bot.username}!`)
+		console.log(`Logged in as ${bot.username}!`);
 	},
 };

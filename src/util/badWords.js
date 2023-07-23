@@ -1,5 +1,5 @@
 module.exports = [
-    "anal",
+	"anal",
 	"suicide",
 	"kys",
 	"send yourself",
@@ -24,9 +24,9 @@ module.exports = [
 	"tits",
 	"wank",
 	"whore",
-    "braindead",
-    "dick",
+	"braindead",
+	"dick",
 	"retard",
 	"fag",
-	"faggot"
-]
+	"faggot",
+];

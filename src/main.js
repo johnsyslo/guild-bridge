@@ -1,17 +1,22 @@
-const { Client, GatewayIntentBits } = require("discord.js")
-require("dotenv").config();
-const mineflayer = require('mineflayer')
-const quakfix = require('./util/quakfix');
+// ***************
+// * Bridge Bot  *
+// * By oIreland *
+// ***************
 
-// Create the Discord client or connection to the server.
+const { Client, GatewayIntentBits } = require("discord.js");
+require("dotenv").config();
+const mineflayer = require("mineflayer");
+const setUp = require("./util/setup");
+
+// Create the Discord instance intents.
 const client = new Client({
-    intents: [
-        GatewayIntentBits.Guilds,
-        GatewayIntentBits.GuildMessages,
-        GatewayIntentBits.MessageContent,
-        GatewayIntentBits.GuildMessageReactions,
-    ]
-})
+	intents: [
+		GatewayIntentBits.Guilds,
+		GatewayIntentBits.GuildMessages,
+		GatewayIntentBits.MessageContent,
+		GatewayIntentBits.GuildMessageReactions,
+	],
+});
 
 const bot = mineflayer.createBot({
 	username: process.env.MINECRAFT_EMAIL,
@@ -20,10 +25,10 @@ const bot = mineflayer.createBot({
 	version: "1.16.4",
 	logErrors: true,
 	hideErrors: true,
-	auth: 'microsoft',
+	auth: process.env.MINECRAFT_AUTH_TYPE,
 	checkTimeoutInterval: 30000,
 });
 
 module.exports = { client, bot };
 client.login(process.env.TOKEN);
-quakfix.setUp();
+setUp.Process();

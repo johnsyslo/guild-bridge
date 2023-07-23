@@ -1,8 +1,8 @@
-const { bot } = require('../../../main')
+const { bot } = require("../../../main");
 
 module.exports = {
-    name: 'chat:lobbyJoin',
+	name: "chat:lobbyJoin",
 	async execute() {
-        bot.chat('§')
+		bot.chat("§");
 	},
 };

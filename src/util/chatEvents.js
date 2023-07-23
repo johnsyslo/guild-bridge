@@ -32,8 +32,8 @@ module.exports = {
 	 * Returns:
 	 *  - New Guild Level
 	 *
-     * "chat:guildLevelUp": /^\s{19}The Guild has reached Level (\d*)!$/,
-     */
+	 * "chat:guildLevelUp": /^\s{19}The Guild has reached Level (\d*)!$/,
+	 */
 
 	/** --------------- NOT CURRENT USED ---------------
 	 * When a member is muted/unmuted
@@ -47,8 +47,8 @@ module.exports = {
 	 *  - Muter Player Name
 	 *  - Duration
 	 *
-     * "chat:guildMuteUnmute": /^(\[.*])?\s*(\w{2,17}) has (muted|unmuted) (\[.*])?\s*(\w{2,17})(?: for (\d*[a-z]))?$/,
-     */
+	 * "chat:guildMuteUnmute": /^(\[.*])?\s*(\w{2,17}) has (muted|unmuted) (\[.*])?\s*(\w{2,17})(?: for (\d*[a-z]))?$/,
+	 */
 
 	/**
 	 * When a member connects to or disconnects from Hypixel
@@ -62,12 +62,12 @@ module.exports = {
 	/**
 	 * When the bot detects it is in Limbo
 	 */
-	 "chat:joinLimbo": /^You were spawned in Limbo.$/,
+	"chat:joinLimbo": /^You were spawned in Limbo.$/,
 
 	/**
 	 * When the bot detects its not in Limbo
 	 */
-	"chat:lobbyJoin": /^(?:\s>>>\s)?\[.*]\s[\w]{2,17} (?:joined|spooked into|slid into) the lobby!(?:\s<<<)?$/,
+	"chat:lobbyJoin": /^(?:\s>>>\s)?\[.*]\s\w{2,17} (?:joined|spooked into|slid into) the lobby!(?:\s<<<)?$/,
 
 	/** --------------- NOT CURRENT USED ---------------
 	 * When a player requests to join the guild
@@ -76,7 +76,7 @@ module.exports = {
 	 *  - Player Name
 	 *
 	 * "chat:joinRequest": /^(?:\[.*])?\s*(\w{2,17}) has requested to join the Guild!$/,
-     */
+	 */
 
 	/** --------------- NOT CURRENT USED ---------------
 	 * When "/g online" is typed, and the online and total member count is shown
@@ -85,9 +85,9 @@ module.exports = {
 	 *  - Online / Total
 	 *  - Member Count
 	 *
-     *
+	 *
 	 * "chat:memberCount": /^(Online|Total) Members: (\d+)$/,
-     */
+	 */
 
 	/** --------------- NOT CURRENT USED ---------------
 	 * When a player joins or leaves the guild
@@ -97,8 +97,8 @@ module.exports = {
 	 *  - Player Name
 	 *  - joined / left
 	 *
-     * "chat:memberJoinLeave": /^(\[.*])?\s*(\w{2,17}).*? (joined|left) the guild!$/,
-     */
+	 * "chat:memberJoinLeave": /^(\[.*])?\s*(\w{2,17}).*? (joined|left) the guild!$/,
+	 */
 
 	/** --------------- NOT CURRENT USED ---------------
 	 * When a player is kicked from the guild
@@ -109,8 +109,8 @@ module.exports = {
 	 *  - Kicker Hypixel Rank
 	 *  - Kicker Player Name
 	 *
-     * "chat:memberKick": /^(\[.*])?\s*(\w{2,17}).*? was kicked from the guild by (\[.*])?\s*(\w{2,17}).*?!$/,
-     */
+	 * "chat:memberKick": /^(\[.*])?\s*(\w{2,17}).*? was kicked from the guild by (\[.*])?\s*(\w{2,17}).*?!$/,
+	 */
 
 	/** --------------- NOT CURRENT USED ---------------
 	 * When a member is promoted or demoted
@@ -122,14 +122,14 @@ module.exports = {
 	 *  - From Rank
 	 *  - To Rank
 	 *
-     * "chat:promoteDemote": /^(\[.*])?\s*(\w{2,17}).*? was (promoted|demoted) from (.*) to (.*)$/,
-     */
+	 * "chat:promoteDemote": /^(\[.*])?\s*(\w{2,17}).*? was (promoted|demoted) from (.*) to (.*)$/,
+	 */
 
 	/** --------------- NOT CURRENT USED ---------------
 	 * When all guild quest tiers are complete
 	 *
-     * "chat:questComplete": /^\s{17}GUILD QUEST COMPLETED!$/,
-     */
+	 * "chat:questComplete": /^\s{17}GUILD QUEST COMPLETED!$/,
+	 */
 
 	/** --------------- NOT CURRENT USED ---------------
 	 * When a guild quest tier is complete
@@ -137,8 +137,8 @@ module.exports = {
 	 * Returns:
 	 *  - Tier Completed
 	 *
-     * "chat:questTierComplete": /^\s{17}GUILD QUEST TIER (\d*) COMPLETED!$/,
-     */
+	 * "chat:questTierComplete": /^\s{17}GUILD QUEST TIER (\d*) COMPLETED!$/,
+	 */
 
 	/**
 	 * When a message is sent repeatedly
@@ -155,4 +155,12 @@ module.exports = {
 	 *
 	 * "chat:whisper": /^From (?:\[.*])?\s*(\w{2,17}).*?: (.+)$/,
 	 */
-}
+
+	/**
+	 * When an error occurs
+	 *
+	 * Returns:
+	 *  - Error
+	 */
+	"chat:error": /.*?(Can't find a player by the name of '\w+'|Your guild is full!)/,
+};

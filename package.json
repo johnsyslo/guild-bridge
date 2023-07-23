@@ -1,18 +1,24 @@
 {
-  "name": "bridge",
-  "version": "1.0.0",
-  "description": "A bridge between Discord and Hypixel.",
-  "main": "src/main.js",
-  "scripts": {
-    "test": "node src/main.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "discord.js": "^14.11.0",
-    "dotenv": "^16.1.4",
-    "mineflayer": "^4.8.1",
-    "nodemon": "^2.0.22"
-  }
+	"name": "guild-bridge",
+	"version": "2.0.0",
+	"description": "A guild bridge bot.",
+	"main": "src/main.js",
+	"scripts": {
+		"test": "node src/main.js"
+	},
+	"author": "dwsysfx",
+	"license": "SEE LICENSE IN LICENSE",
+	"dependencies": {
+		"discord.js": "^14.11.0",
+		"dotenv": "^16.3.1",
+		"mineflayer": "^4.10.1",
+		"nodemon": "^3.0.1"
+	},
+	"devDependencies": {
+		"eslint": "^8.45.0",
+		"eslint-config-prettier": "^8.8.0",
+		"eslint-plugin-sonarjs": "^0.19.0",
+		"eslint-plugin-unicorn": "^48.0.0",
+		"prettier": "3.0.0"
+	}
 }

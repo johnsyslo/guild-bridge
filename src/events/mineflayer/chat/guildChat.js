@@ -1,15 +1,17 @@
-const { WebhookClient, EmbedBuilder } = require('discord.js');
-const func = require('../../../util/function');
-require('dotenv').config();
+const { EmbedBuilder, WebhookClient } = require("discord.js");
+require("dotenv").config();
 
 module.exports = {
-    name: 'chat:guildChat',
+	name: "chat:guildChat",
 	async execute(channel, rank, player, grank, message) {
-        if (player == 'aarf') return;
-        const webhookClient = new  WebhookClient({ id: process.env.WEBHOOK_ID, token: process.env.WEBHOOK_TOKEN })
-        await webhookClient.send({
-            content: message,
-            username: player,
-        })
+		if (player == process.env.USERNAME) return;
+		const webhookClient = new WebhookClient({ url: process.env.MEMBER_WEBHOOK_URL });
+
+		const embed = new EmbedBuilder();
+		await webhookClient.send({
+			embeds: [embed.setColor(Math.floor(Math.random() * 16777214) + 1).setDescription(message)],
+			username: player,
+			avatarURL: `https://mc-heads.net/avatar/${player}/300w`,
+		});
 	},
 };

@@ -1,8 +1,6 @@
-const { bot } = require('../../../main')
-
 module.exports = {
-    name: 'chat:joinLimbo',
+	name: "chat:joinLimbo",
 	async execute() {
-        console.log(`Bot joined limbo.`)
+		console.log(`Bot joined limbo.`);
 	},
 };
