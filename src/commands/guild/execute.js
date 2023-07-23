@@ -14,7 +14,7 @@ module.exports = {
 			embed
 				// prettier ignore
 				.setTitle("Error")
-				.setDescription("> Enter a valid ign!")
+				.setDescription("> Enter a valid command!")
 				.setColor(0xff0000);
 			await message.channel.send({ embeds: [embed] }).then((msg) => {
 				setTimeout(() => msg.delete(), 5000);
