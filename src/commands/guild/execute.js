@@ -8,7 +8,6 @@ module.exports = {
 	type: "guild",
 	staffOnly: true,
 	async execute(message, args) {
-		console.log(args);
 		const embed = new EmbedBuilder();
 		if (args.length <= 0) {
 			embed

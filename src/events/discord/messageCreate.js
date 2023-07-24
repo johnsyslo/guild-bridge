@@ -52,7 +52,8 @@ module.exports = {
 
 			if (!client.commands.has(command.name)) return;
 			try {
-				command.execute(message, args.join(" "));
+				console.log(args);
+				command.execute(message, args);
 			} catch (error) {
 				console.error(error);
 				embed
