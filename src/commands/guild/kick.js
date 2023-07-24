@@ -2,9 +2,9 @@ const { EmbedBuilder } = require("discord.js");
 const func = require("../../util/functions");
 
 module.exports = {
-	name: "execute",
-	description: "Execute any command on the account.",
-	aliases: ["exe"],
+	name: "kick",
+	description: "Kick a member from the guild.",
+	aliases: ["k"],
 	type: "guild",
 	staffOnly: true,
 	async execute(message, args) {
@@ -13,7 +13,7 @@ module.exports = {
 			embed
 				// prettier ignore
 				.setTitle("Error")
-				.setDescription("> Enter a valid command!")
+				.setDescription("> Enter  a valid ign!")
 				.setColor(0xff0000);
 			await message.channel.send({ embeds: [embed] }).then((msg) => {
 				setTimeout(() => msg.delete(), 5000);
@@ -21,11 +21,15 @@ module.exports = {
 			return;
 		}
 		try {
-			func.executeCommand(args.join(" "));
+			const username = args[0];
+			const reason = args.splice(1).join(" ");
+
+			func.executeCommand(`/g kick ${username} ${reason}`);
+
 			embed
 				// prettier ignore
 				.setTitle("Sucess")
-				.setDescription(`> Ran the command  \`${args.join(" ")}\``)
+				.setDescription(`> Kicked \`${username}\``)
 				.setColor(0x00ff00);
 		} catch (error) {
 			embed

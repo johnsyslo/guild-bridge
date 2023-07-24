@@ -34,6 +34,7 @@ module.exports = {
 			const commandName = args.shift().toLowerCase();
 			const command = client.commands.get(commandName) || client.aliases.get(commandName);
 
+			/**
 			const permsError = embed
 				.setColor("Red")
 				.setTitle("Error")
@@ -50,6 +51,7 @@ module.exports = {
 				});
 				return;
 			}
+			*/
 
 			if (!client.commands.has(command.name)) return;
 			try {
