@@ -44,10 +44,11 @@ module.exports = {
 					setTimeout(() => msg.delete(), 5000);
 				});
 				return;
-			} else if (command.staffOnly && !message.member.roles.cache.has(process.env.RECRUITER_ROLE_ID)) {
+			} else if (command.staffOnly && !message.member.roles.cache.has(process.env.STAFF_ROLE_ID)) {
 				message.reply({ embeds: [permsError] }).then((msg) => {
 					setTimeout(() => msg.delete(), 5000);
 				});
+				return;
 			}
 
 			if (!client.commands.has(command.name)) return;

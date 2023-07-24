@@ -21,11 +21,11 @@ module.exports = {
 			return;
 		}
 		try {
-			func.executeCommand(args);
+			func.executeCommand(args.join(" "));
 			embed
 				// prettier ignore
 				.setTitle("Sucessfully Ran")
-				.setDescription(`> Sucessfully ran  \`${args}\``)
+				.setDescription(`> Sucessfully ran  \`${args.join(" ")}\``)
 				.setColor(0x00ff00);
 		} catch (error) {
 			embed

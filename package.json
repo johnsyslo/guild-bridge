@@ -1,14 +1,14 @@
 {
 	"name": "guild-bridge",
-	"version": "2.0.1",
+	"version": "1.0.0",
 	"description": "A guild bridge bot.",
 	"main": "src/main.js",
 	"scripts": {
 		"start": "node .",
 		"lint": "eslint .",
 		"pm2": "pm2 start src/main.js",
-		"pm2:restart": "pm2 restart main",
-		"pm2:kill": "pm2 kill"
+		"pm2:res": "pm2 restart main",
+		"pm2:k": "pm2 kill"
 	},
 	"author": "dwsysfx",
 	"license": "SEE LICENSE IN LICENSE",
